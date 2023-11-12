@@ -2,13 +2,13 @@ import { Console } from '@woowacourse/mission-utils';
 
 import { INPUT } from '../constant/io.js';
 import { inputDelimiter, menuDelimiter } from '../constant/delimiter.js';
-
 import {
   convertStringToEssence,
   convertStringToMenuList,
 } from '../util/converter.js';
 import InputValidator from '../validator/InputValidator.js';
 import DateValidator from '../validator/DateValidator.js';
+import MenuValidator from '../validator/MenuValidator.js';
 
 const InputView = {
   async readDate() {
@@ -30,6 +30,7 @@ const InputView = {
       inputDelimiter,
       menuDelimiter,
     );
+    MenuValidator.validateMenuExistence(menuList);
 
     return menuList;
   },

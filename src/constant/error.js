@@ -8,3 +8,7 @@ export const INPUT_ERROR = Object.freeze({
 export const DATE_ERROR = Object.freeze({
   range: '유효하지 않은 날짜입니다.',
 });
+
+export const MENU_ERROR = Object.freeze({
+  existence: '존재하지 않는 메뉴입니다.',
+});
