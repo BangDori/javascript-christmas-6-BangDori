@@ -1,22 +1,21 @@
 import { Console } from '@woowacourse/mission-utils';
+import { OUTPUT } from '../constant/io.js';
 
 const OutputView = {
   printWelcome() {
-    Console.print('안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.');
+    Console.print(OUTPUT.welcom);
   },
 
   printPreviewEvent(date) {
-    Console.print(
-      `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!`,
-    );
+    Console.print(OUTPUT.previewEvent(date));
   },
 
   printError(error) {
     Console.print(error);
   },
 
-  printMenu() {
-    Console.print('<주문 메뉴>');
+  printMenuList() {
+    Console.print(OUTPUT.menuList);
   },
 };
 
