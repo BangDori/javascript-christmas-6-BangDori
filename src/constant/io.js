@@ -10,5 +10,6 @@ export const OUTPUT = Object.freeze({
   welcom: `안녕하세요! 우테코 식당 ${EVENT_DATE.month}월 이벤트 플래너입니다.`,
   previewEvent: date =>
     `${EVENT_DATE.month}월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!`,
-  menuList: '주문 메뉴',
+  orderDetails: '\n<주문 메뉴>',
+  orderAmount: '\n<할인 전 총주문 금액>',
 });

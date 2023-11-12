@@ -1,10 +1,14 @@
 import retryOnError from './util/retry.js';
 import InputView from './view/InputView.js';
 import OutputView from './view/OutputView.js';
+import OrderInfo from './domain/OrderInfo.js';
 
 class App {
+  #orderInfo;
+
   async run() {
-    const { date, menuList } = await this.inputOrderInfo();
+    await this.inputOrderInfo();
+    this.showOrderDetails();
   }
 
   async inputOrderInfo() {
@@ -14,7 +18,15 @@ class App {
     const menuList = await retryOnError(InputView.readMenuList);
 
     OutputView.printPreviewEvent(date);
-    return { date, menuList };
+
+    this.#orderInfo = new OrderInfo(date, menuList);
+  }
+
+  showOrderDetails() {
+    const recepitDetails = this.#orderInfo.getReceiptDetails();
+    const orderAmount = this.#orderInfo.getOrderAmount();
+
+    OutputView.printOrderInfo(recepitDetails, orderAmount);
   }
 }
 

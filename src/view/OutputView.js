@@ -14,8 +14,12 @@ const OutputView = {
     Console.print(error);
   },
 
-  printMenuList() {
-    Console.print(OUTPUT.menuList);
+  printOrderInfo(recepitDetails, orderAmount) {
+    Console.print(OUTPUT.orderDetails);
+    recepitDetails.forEach(detail => Console.print(detail));
+
+    Console.print(OUTPUT.orderAmount);
+    Console.print(`${orderAmount.toLocaleString()}원`);
   },
 };
 
