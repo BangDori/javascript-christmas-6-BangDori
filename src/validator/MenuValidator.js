@@ -2,12 +2,14 @@ import MENU_BOARD from '../constant/menu/board.js';
 import { MENU_ERROR } from '../constant/error.js';
 import MenuError from '../error/MenuError.js';
 import { BEVERAGE } from '../constant/menu/beverage.js';
+import { MENU_COUNT } from '../constant/setting.js';
 
 class MenuValidator {
   static validate(menuList) {
     this.validateMenuExistence(menuList);
     this.validateMenuDuplication(menuList);
     this.validateBeverageOnlyOrder(menuList);
+    this.validateMenuCount(menuList);
   }
 
   static validateMenuExistence(menuList) {
@@ -37,6 +39,14 @@ class MenuValidator {
 
     if (count === menuList.length) {
       throw new MenuError(MENU_ERROR.onlyBeverage);
+    }
+  }
+
+  static validateMenuCount(menuList) {
+    const totalMenuCount = menuList.reduce((acc, menu) => acc + menu[1], 0);
+
+    if (totalMenuCount < MENU_COUNT.min || totalMenuCount > MENU_COUNT.max) {
+      throw new MenuError(MENU_ERROR.count);
     }
   }
 }
