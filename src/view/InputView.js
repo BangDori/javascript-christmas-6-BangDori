@@ -17,6 +17,7 @@ const InputView = {
 
   async readMenuList() {
     const inputMenuList = await Console.readLineAsync(INPUT.menuList);
+    InputValidator.valdiateMenu(inputMenuList);
 
     return inputMenuList;
   },
