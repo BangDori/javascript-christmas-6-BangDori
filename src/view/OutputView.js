@@ -11,6 +11,10 @@ const OutputView = {
     );
   },
 
+  printError(error) {
+    Console.print(error);
+  },
+
   printMenu() {
     Console.print('<주문 메뉴>');
   },
