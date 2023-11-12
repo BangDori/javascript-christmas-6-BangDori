@@ -1,12 +1,9 @@
 import { SPECIAL_EVENT } from '../constant/event.js';
-import { DAY, EVENT_DATE } from '../constant/date.js';
+import { getCurrentDay } from '../util/date.js';
 
 class SpecialEvent {
   static getDiscount(date) {
-    const { year, month } = EVENT_DATE;
-    const reservationDate = new Date(`${year}-${month}-${date}`);
-    const dayNumber = reservationDate.getDay();
-    const day = DAY[dayNumber];
+    const day = getCurrentDay(date);
 
     if (day === SPECIAL_EVENT.day) {
       return SPECIAL_EVENT.discount;

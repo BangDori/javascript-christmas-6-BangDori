@@ -15,3 +15,15 @@ export const DAY = Object.freeze({
   5: '금요일',
   6: '토요일',
 });
+
+export const WEEKDAY = Object.freeze({
+  name: '평일',
+  start: 0, // 일요일
+  end: 4, // 목요일
+});
+
+export const WEEKEND = Object.freeze({
+  name: '주말',
+  start: 5, // 금요일
+  end: 6, // 토툐일
+});
