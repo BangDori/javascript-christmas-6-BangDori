@@ -7,6 +7,8 @@ class App {
 
     const date = await InputView.readDate();
     const menuList = await InputView.readMenuList();
+
+    OutputView.printPreviewEvent(date);
   }
 }
 
