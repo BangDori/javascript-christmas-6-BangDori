@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 
 import InputValidator from '../validator/InputValidator.js';
+import DateValidator from '../validator/DateValidator.js';
 
 const InputView = {
   async readDate() {
@@ -9,7 +10,10 @@ const InputView = {
     );
     InputValidator.validateDate(inputDate);
 
-    return inputDate;
+    const date = parseInt(inputDate, 10);
+    DateValidator.validateRange(date);
+
+    return date;
   },
 
   async readMenuList() {
