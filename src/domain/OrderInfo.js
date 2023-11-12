@@ -13,6 +13,15 @@ class OrderInfo {
     }, 0);
   }
 
+  getCountByType(type) {
+    return this.#menuList.reduce((acc, [name, count]) => {
+      if (MENU_BOARD[name].type === type) {
+        return acc + count;
+      }
+      return acc;
+    }, 0);
+  }
+
   getReceiptDetails() {
     return this.#menuList.map(([menu, count]) => `${menu} ${count}개`);
   }
