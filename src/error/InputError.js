@@ -1,4 +1,4 @@
-const ERROR_PREFIX = '[ERROR] ';
+import { ERROR_PREFIX } from '../constant/error.js';
 
 class InputError extends Error {
   constructor(message) {
