@@ -1,5 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import { OUTPUT } from '../constant/io.js';
+import { NO_BENEFIT } from '../constant/event.js';
 
 const OutputView = {
   printWelcome() {
@@ -20,6 +21,15 @@ const OutputView = {
 
     Console.print(OUTPUT.orderAmount);
     Console.print(`${orderAmount.toLocaleString()}원`);
+  },
+
+  printGiftInfo(gift) {
+    Console.print(OUTPUT.gift);
+    if (gift === NO_BENEFIT) {
+      Console.print(NO_BENEFIT);
+      return;
+    }
+    Console.print(`${gift.name} 1개`);
   },
 };
 

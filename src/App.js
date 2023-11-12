@@ -2,6 +2,7 @@ import retryOnError from './util/retry.js';
 import InputView from './view/InputView.js';
 import OutputView from './view/OutputView.js';
 import OrderInfo from './domain/OrderInfo.js';
+import EventController from './controller/eventController.js';
 
 class App {
   #orderInfo;
@@ -9,6 +10,7 @@ class App {
   async run() {
     await this.inputOrderInfo();
     this.showOrderDetails();
+    this.checkEvents();
   }
 
   async inputOrderInfo() {
@@ -27,6 +29,13 @@ class App {
     const orderAmount = this.#orderInfo.getOrderAmount();
 
     OutputView.printOrderInfo(recepitDetails, orderAmount);
+  }
+
+  checkEvents() {
+    const eventController = new EventController();
+    const orderAmount = this.#orderInfo.getOrderAmount();
+
+    eventController.checkGiftEvent(orderAmount);
   }
 }
 

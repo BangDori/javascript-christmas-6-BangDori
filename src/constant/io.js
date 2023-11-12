@@ -12,4 +12,5 @@ export const OUTPUT = Object.freeze({
     `${EVENT_DATE.month}월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!`,
   orderDetails: '\n<주문 메뉴>',
   orderAmount: '\n<할인 전 총주문 금액>',
+  gift: '\n<증정 메뉴>',
 });
