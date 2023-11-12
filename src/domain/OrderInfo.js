@@ -13,8 +13,8 @@ class OrderInfo {
     }, 0);
   }
 
-  getMenuList() {
-    return this.#menuList;
+  getReceiptDetails() {
+    return this.#menuList.map(([menu, count]) => `${menu} ${count}개`);
   }
 }
 
