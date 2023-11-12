@@ -6,22 +6,24 @@ import { MENU_COUNT } from '../constant/setting.js';
 
 class MenuValidator {
   static validate(menuList) {
-    this.validateMenuExistence(menuList);
-    this.validateMenuDuplication(menuList);
-    this.validateBeverageOnlyOrder(menuList);
-    this.validateMenuCount(menuList);
+    const nameList = menuList.map(menu => menu[0]);
+    this.validateMenuExistence(nameList);
+    this.validateMenuDuplication(nameList);
+    this.validateBeverageOnlyOrder(nameList);
+
+    const countList = menuList.map(menu => menu[1]);
+    this.validateMenuCount(countList);
   }
 
-  static validateMenuExistence(menuList) {
-    menuList.forEach(menu => {
-      if (!MENU_BOARD[menu[0]]) {
+  static validateMenuExistence(nameList) {
+    nameList.forEach(name => {
+      if (!MENU_BOARD[name]) {
         throw new MenuError(MENU_ERROR.existence);
       }
     });
   }
 
-  static validateMenuDuplication(menuList) {
-    const nameList = menuList.map(menu => menu[0]);
+  static validateMenuDuplication(nameList) {
     const uniqueNameList = new Set(nameList);
 
     if (uniqueNameList.size !== nameList.length) {
@@ -29,23 +31,23 @@ class MenuValidator {
     }
   }
 
-  static validateBeverageOnlyOrder(menuList) {
-    const count = menuList.reduce((acc, menu) => {
-      if (MENU_BOARD[menu[0]].type === BEVERAGE) {
+  static validateBeverageOnlyOrder(nameList) {
+    const count = nameList.reduce((acc, name) => {
+      if (MENU_BOARD[name].type === BEVERAGE) {
         return acc + 1;
       }
       return acc;
     }, 0);
 
-    if (count === menuList.length) {
+    if (count === nameList.length) {
       throw new MenuError(MENU_ERROR.onlyBeverage);
     }
   }
 
-  static validateMenuCount(menuList) {
-    const totalMenuCount = menuList.reduce((acc, menu) => acc + menu[1], 0);
+  static validateMenuCount(countList) {
+    const totalCount = countList.reduce((acc, count) => acc + count, 0);
 
-    if (totalMenuCount < MENU_COUNT.min || totalMenuCount > MENU_COUNT.max) {
+    if (totalCount < MENU_COUNT.min || totalCount > MENU_COUNT.max) {
       throw new MenuError(MENU_ERROR.count);
     }
   }
