@@ -1,4 +1,5 @@
 import { BEVERAGE, BEVERAGE_MENU } from './menu/beverage.js';
+import { EVENT_DATE } from './date.js';
 
 export const NO_BENEFIT = '없음';
 
@@ -19,6 +20,16 @@ export const CHRISTMAS_EVENT = Object.freeze({
   name: '크리스마스 디데이 할인',
   perDate: 100,
   base: 900,
+});
+
+export const WEEKDAY_EVENT = Object.freeze({
+  name: '평일 할인',
+  perDessert: EVENT_DATE.year,
+});
+
+export const WEEKEND_EVENT = Object.freeze({
+  name: '주말 할인',
+  perMain: EVENT_DATE.year,
 });
 
 export const SPECIAL_EVENT = Object.freeze({
