@@ -1,9 +1,11 @@
 import MENU_BOARD from '../constant/menu/board.js';
 
 class OrderInfo {
+  #reservationDate;
   #menuList;
 
-  constructor(menuList) {
+  constructor(reservationDate, menuList) {
+    this.#reservationDate = reservationDate;
     this.#menuList = menuList;
   }
 
@@ -24,6 +26,10 @@ class OrderInfo {
 
   getReceiptDetails() {
     return this.#menuList.map(([menu, count]) => `${menu} ${count}개`);
+  }
+
+  getReservationDate() {
+    return this.#reservationDate;
   }
 }
 
