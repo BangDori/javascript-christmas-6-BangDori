@@ -1,6 +1,12 @@
 import { Console } from '@woowacourse/mission-utils';
 
 import { INPUT } from '../constant/io.js';
+import { inputDelimiter, menuDelimiter } from '../constant/delimiter.js';
+
+import {
+  convertStringToEssence,
+  convertStringToMenuList,
+} from '../util/converter.js';
 import InputValidator from '../validator/InputValidator.js';
 import DateValidator from '../validator/DateValidator.js';
 
@@ -9,7 +15,7 @@ const InputView = {
     const inputDate = await Console.readLineAsync(INPUT.date);
     InputValidator.validateDate(inputDate);
 
-    const date = parseInt(inputDate, 10);
+    const date = convertStringToEssence(inputDate);
     DateValidator.validateRange(date);
 
     return date;
@@ -19,7 +25,13 @@ const InputView = {
     const inputMenuList = await Console.readLineAsync(INPUT.menuList);
     InputValidator.valdiateMenu(inputMenuList);
 
-    return inputMenuList;
+    const menuList = convertStringToMenuList(
+      inputMenuList,
+      inputDelimiter,
+      menuDelimiter,
+    );
+
+    return menuList;
   },
 };
 
