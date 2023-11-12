@@ -1,4 +1,13 @@
+import { BEVERAGE, BEVERAGE_MENU } from './menu/beverage.js';
+
 export const NO_BENEFIT = '없음';
+
+export const GIFT_EVENT = Object.freeze({
+  name: '증정 이벤트',
+  category: BEVERAGE,
+  goods: BEVERAGE_MENU.샴페인,
+  requried: 120_000,
+});
 
 export const EVENT_BADGE = Object.freeze({
   santa: { name: '산타', required: 20_000 },
