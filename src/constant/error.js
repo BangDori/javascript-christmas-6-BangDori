@@ -11,4 +11,5 @@ export const DATE_ERROR = Object.freeze({
 
 export const MENU_ERROR = Object.freeze({
   existence: '존재하지 않는 메뉴입니다.',
+  duplication: '중복되는 메뉴가 존재합니다.',
 });

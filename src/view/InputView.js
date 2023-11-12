@@ -30,7 +30,7 @@ const InputView = {
       inputDelimiter,
       menuDelimiter,
     );
-    MenuValidator.validateMenuExistence(menuList);
+    MenuValidator.validate(menuList);
 
     return menuList;
   },
