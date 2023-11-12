@@ -1,5 +1,5 @@
 import MENU_BOARD from '../../src/constant/menu/board';
-import GiftEvent from '../../src/domain/GiftEvent';
+import GiftEvent from '../../src/domain/event/GiftEvent';
 
 describe('증정 이벤트 테스트', () => {
   test('12만원 이상일 경우 샴페인 증정', () => {

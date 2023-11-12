@@ -1,4 +1,4 @@
-import { GIFT_EVENT, NO_BENEFIT } from '../constant/event.js';
+import { GIFT_EVENT, NO_BENEFIT } from '../../constant/event.js';
 
 class GiftEvent {
   static getGift(totalPrice) {

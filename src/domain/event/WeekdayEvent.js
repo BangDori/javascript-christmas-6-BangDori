@@ -1,6 +1,6 @@
-import { WEEKDAY } from '../constant/date.js';
-import { WEEKDAY_EVENT } from '../constant/event.js';
-import { getCurrentDayType } from '../util/date.js';
+import { WEEKDAY } from '../../constant/date.js';
+import { WEEKDAY_EVENT } from '../../constant/event.js';
+import { getCurrentDayType } from '../../util/date.js';
 
 class WeekDayEvent {
   static getDiscount(date, dessertCount) {

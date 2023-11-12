@@ -1,6 +1,6 @@
-import { WEEKEND } from '../constant/date.js';
-import { WEEKEND_EVENT } from '../constant/event.js';
-import { getCurrentDayType } from '../util/date.js';
+import { WEEKEND } from '../../constant/date.js';
+import { WEEKEND_EVENT } from '../../constant/event.js';
+import { getCurrentDayType } from '../../util/date.js';
 
 class WeekendEvent {
   static getDiscount(date, mainCount) {

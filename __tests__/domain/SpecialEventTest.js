@@ -1,4 +1,4 @@
-import SpecialEvent from '../../src/domain/SpecialEvent';
+import SpecialEvent from '../../src/domain/event/SpecialEvent';
 
 describe('특별 할인 이벤트 테스트', () => {
   test('일요일 특별 할인 적용', () => {

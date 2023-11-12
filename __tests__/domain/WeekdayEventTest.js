@@ -1,4 +1,4 @@
-import WeekDayEvent from '../../src/domain/WeekdayEvent';
+import WeekDayEvent from '../../src/domain/event/WeekdayEvent';
 
 describe('평일 이벤트 클래스 테스트', () => {
   const dessertCount = 1;

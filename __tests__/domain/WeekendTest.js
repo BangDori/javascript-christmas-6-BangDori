@@ -1,4 +1,4 @@
-import WeekendEvent from '../../src/domain/WeekendEvent';
+import WeekendEvent from '../../src/domain/event/WeekendEvent';
 
 describe('주말 이벤트 클래스 테스트', () => {
   const mainCount = 1;

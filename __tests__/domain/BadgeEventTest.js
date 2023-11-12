@@ -1,4 +1,4 @@
-import BadgeEvent from '../../src/domain/BadgeEvent';
+import BadgeEvent from '../../src/domain/event/BadgeEvent';
 
 describe('배지 이벤트 클래스 테스트', () => {
   test.each([

@@ -1,5 +1,5 @@
-import { SPECIAL_EVENT } from '../constant/event.js';
-import { getCurrentDay } from '../util/date.js';
+import { SPECIAL_EVENT } from '../../constant/event.js';
+import { getCurrentDay } from '../../util/date.js';
 
 class SpecialEvent {
   static getDiscount(date) {
