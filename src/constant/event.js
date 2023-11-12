@@ -20,3 +20,9 @@ export const CHRISTMAS_EVENT = Object.freeze({
   perDate: 100,
   base: 900,
 });
+
+export const SPECIAL_EVENT = Object.freeze({
+  name: '특별 할인',
+  day: '일요일',
+  discount: 1_000,
+});
