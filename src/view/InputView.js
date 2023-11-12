@@ -1,7 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 
 import { INPUT } from '../constant/io.js';
-import { inputDelimiter, menuDelimiter } from '../constant/delimiter.js';
+import { INPUT_DELIMITER, MENU_DELIMITER } from '../constant/delimiter.js';
 import {
   convertStringToEssence,
   convertStringToMenuList,
@@ -27,8 +27,8 @@ const InputView = {
 
     const menuList = convertStringToMenuList(
       inputMenuList,
-      inputDelimiter,
-      menuDelimiter,
+      INPUT_DELIMITER,
+      MENU_DELIMITER,
     );
     MenuValidator.validate(menuList);
 

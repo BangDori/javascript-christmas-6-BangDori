@@ -1,4 +1,4 @@
-const inputDelimiter = ',';
-const menuDelimiter = '-';
+const INPUT_DELIMITER = ',';
+const MENU_DELIMITER = '-';
 
-export { inputDelimiter, menuDelimiter };
+export { INPUT_DELIMITER, MENU_DELIMITER };
