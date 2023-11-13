@@ -1,6 +1,7 @@
 import { MENU_COUNT } from './setting.js';
 
 export const ERROR_PREFIX = '[ERROR] ';
+export const RETRY_MESSAGE = ' 다시 입력해 주세요.';
 
 export const INPUT_ERROR = Object.freeze({
   date: '유효하지 않은 날짜입니다.',

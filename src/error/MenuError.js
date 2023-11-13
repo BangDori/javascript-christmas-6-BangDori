@@ -1,8 +1,8 @@
-import { ERROR_PREFIX } from '../constant/error.js';
+import { ERROR_PREFIX, RETRY_MESSAGE } from '../constant/error.js';
 
 class MenuError extends Error {
   constructor(message) {
-    super(ERROR_PREFIX + message);
+    super(ERROR_PREFIX + message + RETRY_MESSAGE);
     this.name = this.constructor.name;
   }
 }
