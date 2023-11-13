@@ -1,5 +1,7 @@
 import { WEEKDAY, WEEKEND } from '../../constant/date.js';
 import { WEEK_EVENT } from '../../constant/event.js';
+import { DESSERT } from '../../constant/menu/dessert.js';
+import { MAIN } from '../../constant/menu/main.js';
 import { getCurrentDayType } from '../../util/date.js';
 
 class WeekEvent {
@@ -17,14 +19,14 @@ class WeekEvent {
   }
 
   static getWeekdayDiscount(orderInfo) {
-    const dessertCount = orderInfo.getDessertCount();
+    const dessertCount = orderInfo.getCountByType(DESSERT);
     const discount = dessertCount * WEEK_EVENT.weekday.perDessert;
 
     return { event: WEEK_EVENT.weekday.name, discount };
   }
 
   static getWeekendDiscount(orderInfo) {
-    const mainCount = orderInfo.getMainCount();
+    const mainCount = orderInfo.getCountByType(MAIN);
     const discount = mainCount * WEEK_EVENT.weekend.perMain;
 
     return { event: WEEK_EVENT.weekend.name, discount };
