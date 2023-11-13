@@ -3,33 +3,39 @@ import EventManager from '../domain/EventManager.js';
 import OutputView from '../view/OutputView.js';
 
 class EventController {
-  checkGiftEvent(orderInfo) {
-    const orderAmount = orderInfo.getOrderAmount();
+  #orderInfo;
+
+  constructor(orderInfo) {
+    this.#orderInfo = orderInfo;
+  }
+
+  checkGiftEvent() {
+    const orderAmount = this.#orderInfo.getOrderAmount();
     const gift = GiftEvent.getBenefitInfo(orderAmount);
 
     if (gift) {
-      orderInfo.presentGift(gift.name);
+      this.#orderInfo.presentGift(gift.name);
     }
 
     OutputView.printGiftInfo(gift);
   }
 
-  checkBenefitDetails(orderInfo) {
-    const benefitsDetail = EventManager.getBenefitDetails(orderInfo);
+  checkBenefitDetails() {
+    const benefitsDetail = EventManager.getBenefitDetails(this.#orderInfo);
     OutputView.printBenefitDetails(benefitsDetail);
   }
 
-  checkAmounts(orderInfo) {
-    const benefitAmount = EventManager.getBenefitAmount(orderInfo);
+  checkAmounts() {
+    const benefitAmount = EventManager.getBenefitAmount(this.#orderInfo);
     OutputView.printBenefitAmount(benefitAmount);
 
-    const orderAmount = orderInfo.getOrderAmount();
+    const orderAmount = this.#orderInfo.getOrderAmount();
     const finalOrderAmount = orderAmount - benefitAmount;
     OutputView.printFinalOrderAmount(finalOrderAmount);
   }
 
-  checkBadge(orderInfo) {
-    const benefitAmount = EventManager.getBenefitAmount(orderInfo);
+  checkBadge() {
+    const benefitAmount = EventManager.getBenefitAmount(this.#orderInfo);
     const badge = EventManager.getBadge(benefitAmount);
 
     OutputView.printEventBadge(badge);

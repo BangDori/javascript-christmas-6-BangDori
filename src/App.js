@@ -10,11 +10,11 @@ class App {
 
     this.showOrderDetails(orderInfo);
 
-    const eventController = new EventController();
-    eventController.checkGiftEvent(orderInfo);
-    eventController.checkBenefitDetails(orderInfo);
-    eventController.checkAmounts(orderInfo);
-    eventController.checkBadge(orderInfo);
+    const eventController = new EventController(orderInfo);
+    eventController.checkGiftEvent();
+    eventController.checkBenefitDetails();
+    eventController.checkAmounts();
+    eventController.checkBadge();
   }
 
   async inputOrderInfo() {
