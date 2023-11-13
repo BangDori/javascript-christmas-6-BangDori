@@ -28,8 +28,8 @@ class OrderInfo {
     }, 0);
   }
 
-  getReceiptDetails() {
-    return this.#menuList.map(([menu, count]) => `${menu} ${count}개`);
+  getMenuList() {
+    return this.#menuList;
   }
 
   getReservationDate() {

@@ -8,7 +8,7 @@ class App {
   async run() {
     const orderInfo = await this.inputOrderInfo();
 
-    this.showOrderDetails(orderInfo);
+    this.showOrderInfo(orderInfo);
 
     const eventController = new EventController(orderInfo);
     eventController.checkGiftEvent();
@@ -28,11 +28,11 @@ class App {
     return new OrderInfo(reservationDate, menuList);
   }
 
-  showOrderDetails(orderInfo) {
-    const recepitDetails = orderInfo.getReceiptDetails();
+  showOrderInfo(orderInfo) {
+    const menuList = orderInfo.getMenuList();
     const orderAmount = orderInfo.getOrderAmount();
 
-    OutputView.printOrderInfo(recepitDetails, orderAmount);
+    OutputView.printOrderInfo(menuList, orderAmount);
   }
 }
 
