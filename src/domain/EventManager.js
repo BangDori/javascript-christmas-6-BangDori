@@ -7,11 +7,11 @@ import BadgeEvent from './event/BadgeEvent.js';
 class EventManager {
   static getBenefits(orderInfo) {
     const orderAmount = orderInfo.getOrderAmount();
-    const date = orderInfo.getReservationDate();
+    const reservationDate = orderInfo.getReservationDate();
 
-    const christmas = ChristmasEvent.getBenefitInfo(date);
-    const week = WeekEvent.getBenefitInfo(orderInfo, date);
-    const special = SpecialEvent.getBenefitInfo(date);
+    const christmas = ChristmasEvent.getBenefitInfo(reservationDate);
+    const week = WeekEvent.getBenefitInfo(orderInfo, reservationDate);
+    const special = SpecialEvent.getBenefitInfo(reservationDate);
     const gift = GiftEvent.getBenefitInfo(orderAmount);
 
     const benefits = [christmas, week, special, gift].filter(Boolean);

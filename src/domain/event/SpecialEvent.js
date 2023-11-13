@@ -1,11 +1,11 @@
 import { SPECIAL_EVENT } from '../../constant/event.js';
-import { getCurrentDay } from '../../util/date.js';
+import { getReservationDay } from '../../util/date.js';
 
 class SpecialEvent {
-  static getBenefitInfo(date) {
-    const day = getCurrentDay(date);
+  static getBenefitInfo(reservationDate) {
+    const reservationDay = getReservationDay(reservationDate);
 
-    if (day !== SPECIAL_EVENT.day) {
+    if (reservationDay !== SPECIAL_EVENT.day) {
       return null;
     }
 

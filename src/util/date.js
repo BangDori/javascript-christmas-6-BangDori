@@ -5,7 +5,7 @@ import { WEEKDAY, WEEKEND, EVENT_DATE, DAY } from '../constant/date.js';
  * @param {number} date 예상 방문일
  * @returns {number} 0 ~ 6 (일요일 ~ 토요일)
  */
-function getCurrentDayNumber(date) {
+function getReservationDayNumber(date) {
   const { year, month } = EVENT_DATE;
   const currentDate = new Date(`${year}-${month}-${date}`);
   const day = currentDate.getDay();
@@ -18,8 +18,8 @@ function getCurrentDayNumber(date) {
  * @param {number} date 예상 방문일
  * @returns {string} 일요일 ~ 토요일
  */
-function getCurrentDay(date) {
-  const day = getCurrentDayNumber(date);
+function getReservationDay(date) {
+  const day = getReservationDayNumber(date);
 
   return DAY[day];
 }
@@ -29,8 +29,8 @@ function getCurrentDay(date) {
  * @param {number} date 예상 방문일
  * @returns {string} 평일 | 주말
  */
-function getCurrentDayType(date) {
-  const day = getCurrentDayNumber(date);
+function getReservationDayType(date) {
+  const day = getReservationDayNumber(date);
 
   if (day >= WEEKDAY.start && day <= WEEKDAY.end) {
     return WEEKDAY.name;
@@ -39,4 +39,4 @@ function getCurrentDayType(date) {
   return WEEKEND.name;
 }
 
-export { getCurrentDay, getCurrentDayType };
+export { getReservationDay, getReservationDayType };

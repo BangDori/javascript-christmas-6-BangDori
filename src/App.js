@@ -21,12 +21,12 @@ class App {
   async inputOrderInfo() {
     OutputView.printWelcome();
 
-    const date = await retryOnError(InputView.readDate);
+    const reservationDate = await retryOnError(InputView.readDate);
     const menuList = await retryOnError(InputView.readMenuList);
 
-    OutputView.printPreviewEvent(date);
+    OutputView.printPreviewEvent(reservationDate);
 
-    this.#orderInfo = new OrderInfo(date, menuList);
+    this.#orderInfo = new OrderInfo(reservationDate, menuList);
   }
 
   showOrderDetails() {

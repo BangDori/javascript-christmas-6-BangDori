@@ -15,10 +15,10 @@ const InputView = {
     const inputDate = await Console.readLineAsync(INPUT.date);
     InputValidator.validateDate(inputDate);
 
-    const date = convertStringToEssence(inputDate);
-    DateValidator.validateRange(date);
+    const reservationDate = convertStringToEssence(inputDate);
+    DateValidator.validateRange(reservationDate);
 
-    return date;
+    return reservationDate;
   },
 
   async readMenuList() {

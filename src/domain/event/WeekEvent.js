@@ -2,13 +2,13 @@ import { WEEKDAY, WEEKEND } from '../../constant/date.js';
 import { WEEK_EVENT } from '../../constant/event.js';
 import { DESSERT } from '../../constant/menu/dessert.js';
 import { MAIN } from '../../constant/menu/main.js';
-import { getCurrentDayType } from '../../util/date.js';
+import { getReservationDayType } from '../../util/date.js';
 
 class WeekEvent {
-  static getBenefitInfo(orderInfo, date) {
-    const day = getCurrentDayType(date);
+  static getBenefitInfo(orderInfo, reservationDate) {
+    const reservationDayType = getReservationDayType(reservationDate);
 
-    switch (day) {
+    switch (reservationDayType) {
       case WEEKDAY.name:
         return this.getWeekdayDiscount(orderInfo);
       case WEEKEND.name:
