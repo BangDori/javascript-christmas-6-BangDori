@@ -32,6 +32,20 @@ const OutputView = {
     }
     Console.print(`${gift.name} 1개`);
   },
+
+  printBenefitDetails(benefitDetails) {
+    Console.print(OUTPUT.benefitDetails);
+
+    if (!benefitDetails) {
+      Console.print(NO_BENEFIT);
+      return;
+    }
+
+    benefitDetails.forEach(benefit => {
+      const { event, discount } = benefit;
+      Console.print(`${event}: -${discount.toLocaleString()}원`);
+    });
+  },
 };
 
 export default OutputView;

@@ -1,4 +1,5 @@
 import GiftEvent from '../domain/event/GiftEvent.js';
+import EventManager from '../domain/EventManager.js';
 import OutputView from '../view/OutputView.js';
 
 class EventController {
@@ -11,6 +12,11 @@ class EventController {
     }
 
     OutputView.printGiftInfo(gift);
+  }
+
+  checkBenefitDetails(orderInfo) {
+    const benefitsDetail = EventManager.getBenefitDetails(orderInfo);
+    OutputView.printBenefitDetails(benefitsDetail);
   }
 }
 

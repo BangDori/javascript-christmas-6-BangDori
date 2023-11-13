@@ -13,4 +13,5 @@ export const OUTPUT = Object.freeze({
   orderDetails: '\n<주문 메뉴>',
   orderAmount: '\n<할인 전 총주문 금액>',
   gift: '\n<증정 메뉴>',
+  benefitDetails: '\n<혜택 내역>',
 });
