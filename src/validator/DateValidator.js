@@ -1,5 +1,5 @@
 import { EVENT_DATE } from '../constant/date.js';
-import { DATE_ERROR } from '../constant/error.js';
+import { DATE_ERROR } from '../constant/message/error.js';
 import DateError from '../error/DateError.js';
 
 class DateValidator {

@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { OUTPUT } from '../constant/io.js';
+import { OUTPUT } from '../constant/message/io.js';
 import { NO_BENEFIT } from '../constant/event.js';
 
 const OutputView = {

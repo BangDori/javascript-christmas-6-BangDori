@@ -1,4 +1,4 @@
-import { ERROR_PREFIX, RETRY_MESSAGE } from '../constant/error.js';
+import { ERROR_PREFIX, RETRY_MESSAGE } from '../constant/message/error.js';
 
 class DateError extends Error {
   constructor(message) {

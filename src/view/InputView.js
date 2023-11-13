@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 
-import { INPUT } from '../constant/io.js';
+import { INPUT } from '../constant/message/io.js';
 import {
   convertStringToEssence,
   convertStringToMenuList,

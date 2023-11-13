@@ -1,4 +1,4 @@
-import { INPUT_ERROR } from '../constant/error.js';
+import { INPUT_ERROR } from '../constant/message/error.js';
 import InputError from '../error/InputError.js';
 
 const datePattern = /^\d+$/;

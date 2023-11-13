@@ -1,4 +1,4 @@
-import { EVENT_DATE } from './date.js';
+import { EVENT_DATE } from '../date.js';
 
 export const INPUT = Object.freeze({
   date: `${EVENT_DATE.month}월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n`,

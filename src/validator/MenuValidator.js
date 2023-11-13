@@ -1,5 +1,5 @@
 import MENU_BOARD from '../constant/menu/board.js';
-import { MENU_ERROR } from '../constant/error.js';
+import { MENU_ERROR } from '../constant/message/error.js';
 import MenuError from '../error/MenuError.js';
 import { BEVERAGE } from '../constant/menu/beverage.js';
 import { MENU_COUNT } from '../constant/setting.js';

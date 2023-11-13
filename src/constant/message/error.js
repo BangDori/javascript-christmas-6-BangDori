@@ -1,4 +1,4 @@
-import { MENU_COUNT } from './setting.js';
+import { MENU_COUNT } from '../setting.js';
 
 export const ERROR_PREFIX = '[ERROR] ';
 export const RETRY_MESSAGE = ' 다시 입력해 주세요.';
