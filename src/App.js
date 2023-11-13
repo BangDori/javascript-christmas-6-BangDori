@@ -10,7 +10,9 @@ class App {
   async run() {
     await this.inputOrderInfo();
     this.showOrderDetails();
-    this.checkEvents();
+
+    const eventController = new EventController();
+    eventController.checkGiftEvent(this.#orderInfo);
   }
 
   async inputOrderInfo() {
@@ -29,11 +31,6 @@ class App {
     const orderAmount = this.#orderInfo.getOrderAmount();
 
     OutputView.printOrderInfo(recepitDetails, orderAmount);
-  }
-
-  checkEvents() {
-    const eventController = new EventController();
-    eventController.checkGiftEvent(this.#orderInfo);
   }
 }
 

@@ -10,7 +10,7 @@ class OrderInfo {
   }
 
   presentGift(gift) {
-    this.#menuList.push(gift);
+    this.#menuList.push([gift, 1]);
   }
 
   getOrderAmount() {

@@ -25,7 +25,8 @@ const OutputView = {
 
   printGiftInfo(gift) {
     Console.print(OUTPUT.gift);
-    if (gift === NO_BENEFIT) {
+
+    if (!gift) {
       Console.print(NO_BENEFIT);
       return;
     }

@@ -1,14 +1,13 @@
-import OutputView from '../view/OutputView.js';
 import GiftEvent from '../domain/event/GiftEvent.js';
-import { NO_BENEFIT } from '../constant/event.js';
+import OutputView from '../view/OutputView.js';
 
 class EventController {
   checkGiftEvent(orderInfo) {
     const orderAmount = orderInfo.getOrderAmount();
-    const gift = GiftEvent.getGift(orderAmount);
+    const gift = GiftEvent.getBenefitInfo(orderAmount);
 
-    if (gift !== NO_BENEFIT) {
-      orderInfo.presentGift([gift.name, gift.price]);
+    if (gift) {
+      orderInfo.presentGift(gift.name);
     }
 
     OutputView.printGiftInfo(gift);

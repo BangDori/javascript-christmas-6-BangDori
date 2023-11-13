@@ -9,7 +9,7 @@ class GiftEvent {
     return {
       event: GIFT_EVENT.name,
       name: GIFT_EVENT.goods.name,
-      price: GIFT_EVENT.goods.price,
+      discount: GIFT_EVENT.goods.price,
     };
   }
 }
