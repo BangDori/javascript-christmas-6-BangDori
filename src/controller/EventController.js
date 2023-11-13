@@ -4,17 +4,19 @@ import OutputView from '../view/OutputView.js';
 
 class EventController {
   #orderInfo;
+  #orderAmount;
 
   constructor(orderInfo) {
     this.#orderInfo = orderInfo;
+    this.#orderAmount = orderInfo.getOrderAmount();
   }
 
   checkGiftEvent() {
-    const orderAmount = this.#orderInfo.getOrderAmount();
-    const gift = GiftEvent.getBenefitInfo(orderAmount);
+    const gift = GiftEvent.getBenefitInfo(this.#orderAmount);
 
     if (gift) {
       this.#orderInfo.presentGift(gift.name);
+      this.#orderAmount = this.#orderInfo.getOrderAmount();
     }
 
     OutputView.printGiftInfo(gift);
@@ -29,8 +31,7 @@ class EventController {
     const benefitAmount = EventManager.getBenefitAmount(this.#orderInfo);
     OutputView.printBenefitAmount(benefitAmount);
 
-    const orderAmount = this.#orderInfo.getOrderAmount();
-    const finalOrderAmount = orderAmount - benefitAmount;
+    const finalOrderAmount = this.#orderAmount - benefitAmount;
     OutputView.printFinalOrderAmount(finalOrderAmount);
   }
 
