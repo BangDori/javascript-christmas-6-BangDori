@@ -1,3 +1,6 @@
+import { BEVERAGE_MENU } from '../../src/constant/menu/beverage';
+import { DESSERT } from '../../src/constant/menu/dessert';
+import { MAIN } from '../../src/constant/menu/main';
 import OrderInfo from '../../src/domain/OrderInfo';
 
 describe('주문 정보 클래스 테스트', () => {
@@ -8,20 +11,24 @@ describe('주문 정보 클래스 테스트', () => {
     ['초코케이크', 1],
     ['레드와인', 1],
   ];
-  const orderInfo = new OrderInfo(date, menuList);
+  let orderInfo;
+
+  beforeEach(() => {
+    orderInfo = new OrderInfo(date, menuList);
+  });
 
   test('총 주문 금액 테스트', () => {
     const orderAmount = orderInfo.getOrderAmount();
     expect(orderAmount).toBe(136000);
   });
 
-  test('주문 상세 정보 테스트', () => {
-    const recepitDetails = orderInfo.getReceiptDetails();
+  test('증정 메뉴 추가 테스트', () => {
+    orderInfo.presentGift(BEVERAGE_MENU.샴페인.name);
 
-    recepitDetails.forEach((recepitDetail, idx) => {
-      const [name, count] = menuList[idx];
+    const giftMenu = orderInfo
+      .getMenuList()
+      .filter(([name, count]) => name === BEVERAGE_MENU.샴페인.name);
 
-      expect(recepitDetail).toBe(`${name} ${count}개`);
-    });
+    expect(giftMenu.length).toBe(1);
   });
 });
