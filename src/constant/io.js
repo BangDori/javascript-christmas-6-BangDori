@@ -16,4 +16,5 @@ export const OUTPUT = Object.freeze({
   benefitDetails: '\n<혜택 내역>',
   benefitAmount: '\n<총혜택 금액>',
   finalOrderAmount: '\n<할인 후 예상 결제 금액>',
+  eventBadge: `\n<${EVENT_DATE.month}월 이벤트 배지>`,
 });

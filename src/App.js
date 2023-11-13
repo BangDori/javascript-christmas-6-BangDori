@@ -15,6 +15,7 @@ class App {
     eventController.checkGiftEvent(this.#orderInfo);
     eventController.checkBenefitDetails(this.#orderInfo);
     eventController.checkAmounts(this.#orderInfo);
+    eventController.checkBadge(this.#orderInfo);
   }
 
   async inputOrderInfo() {

@@ -61,6 +61,11 @@ const OutputView = {
     Console.print(OUTPUT.finalOrderAmount);
     Console.print(`${finalOrderAmount.toLocaleString()}원`);
   },
+
+  printEventBadge(badge) {
+    Console.print(OUTPUT.eventBadge);
+    Console.print(badge);
+  },
 };
 
 export default OutputView;

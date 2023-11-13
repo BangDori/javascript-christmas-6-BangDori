@@ -27,6 +27,13 @@ class EventController {
     const finalOrderAmount = orderAmount - benefitAmount;
     OutputView.printFinalOrderAmount(finalOrderAmount);
   }
+
+  checkBadge(orderInfo) {
+    const benefitAmount = EventManager.getBenefitAmount(orderInfo);
+    const badge = EventManager.getBadge(benefitAmount);
+
+    OutputView.printEventBadge(badge);
+  }
 }
 
 export default EventController;
