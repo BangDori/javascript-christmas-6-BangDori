@@ -2,6 +2,7 @@ import { BEVERAGE, BEVERAGE_MENU } from './menu/beverage.js';
 import { EVENT_DATE } from './date.js';
 
 export const NO_BENEFIT = '없음';
+export const EVENT_PARTICIPATION_PRICE = 10_000;
 
 export const GIFT_EVENT = Object.freeze({
   name: '증정 이벤트',
