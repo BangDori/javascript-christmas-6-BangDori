@@ -31,4 +31,16 @@ describe('주문 정보 클래스 테스트', () => {
 
     expect(giftMenu.length).toBe(1);
   });
+
+  test('디저트 메뉴 개수 확인 테스트', () => {
+    const dessertCount = orderInfo.getCountByType(DESSERT);
+
+    expect(dessertCount).toBe(1);
+  });
+
+  test('메인 메뉴 개수 확인 테스트', () => {
+    const mainCount = orderInfo.getCountByType(MAIN);
+
+    expect(mainCount).toBe(1);
+  });
 });
