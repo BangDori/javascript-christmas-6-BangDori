@@ -23,7 +23,7 @@ const InputView = {
 
   async readMenuList() {
     const inputMenuList = await Console.readLineAsync(INPUT.menuList);
-    InputValidator.valdiateMenu(inputMenuList);
+    InputValidator.validateMenu(inputMenuList);
 
     const menuList = convertStringToMenuList(
       inputMenuList,

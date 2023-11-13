@@ -11,7 +11,7 @@ class InputValidator {
     }
   }
 
-  static valdiateMenu(menuList) {
+  static validateMenu(menuList) {
     if (!menuPattern.test(menuList)) {
       throw new InputError(MENU_ERROR);
     }
