@@ -1,23 +1,16 @@
-import { GIFT_EVENT, NO_BENEFIT } from '../../constant/event.js';
+import { GIFT_EVENT } from '../../constant/event.js';
 
 class GiftEvent {
-  static getGift(totalPrice) {
+  static getBenefitInfo(totalPrice) {
     if (totalPrice < GIFT_EVENT.requried) {
-      return NO_BENEFIT;
-    }
-
-    return GIFT_EVENT.goods;
-  }
-
-  static getDetailInfo(totalPrice) {
-    const gift = this.getGift(totalPrice);
-    if (!gift) {
       return null;
     }
 
-    const { name, price } = gift;
-
-    return `${name}: -${price.toLocaleString()}원`;
+    return {
+      event: GIFT_EVENT.name,
+      gift: GIFT_EVENT.goods.name,
+      price: GIFT_EVENT.goods.price,
+    };
   }
 }
 
