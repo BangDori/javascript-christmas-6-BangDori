@@ -2,6 +2,7 @@ import GiftEvent from './event/GiftEvent.js';
 import ChristmasEvent from './event/ChristmasEvent.js';
 import WeekEvent from './event/WeekEvent.js';
 import SpecialEvent from './event/SpecialEvent.js';
+import BadgeEvent from './event/BadgeEvent.js';
 
 class EventManager {
   static getBenefits(orderInfo) {
@@ -35,6 +36,12 @@ class EventManager {
     );
 
     return benefitAmount;
+  }
+
+  static getBadge(benefitAmount) {
+    const badge = BadgeEvent.getBadge(benefitAmount);
+
+    return badge;
   }
 }
 
