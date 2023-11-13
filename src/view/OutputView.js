@@ -46,6 +46,16 @@ const OutputView = {
       Console.print(`${event}: -${discount.toLocaleString()}원`);
     });
   },
+
+  printBenefitAmount(benefitAmount) {
+    Console.print(OUTPUT.benefitAmount);
+
+    if (benefitAmount === 0) {
+      Console.print('0원');
+      return;
+    }
+    Console.print(`-${benefitAmount.toLocaleString()}원`);
+  },
 };
 
 export default OutputView;

@@ -18,6 +18,11 @@ class EventController {
     const benefitsDetail = EventManager.getBenefitDetails(orderInfo);
     OutputView.printBenefitDetails(benefitsDetail);
   }
+
+  checkAmounts(orderInfo) {
+    const benefitAmount = EventManager.getBenefitAmount(orderInfo);
+    OutputView.printBenefitAmount(benefitAmount);
+  }
 }
 
 export default EventController;

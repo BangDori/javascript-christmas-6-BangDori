@@ -14,6 +14,7 @@ class App {
     const eventController = new EventController();
     eventController.checkGiftEvent(this.#orderInfo);
     eventController.checkBenefitDetails(this.#orderInfo);
+    eventController.checkAmounts(this.#orderInfo);
   }
 
   async inputOrderInfo() {
