@@ -22,6 +22,10 @@ class EventController {
   checkAmounts(orderInfo) {
     const benefitAmount = EventManager.getBenefitAmount(orderInfo);
     OutputView.printBenefitAmount(benefitAmount);
+
+    const orderAmount = orderInfo.getOrderAmount();
+    const finalOrderAmount = orderAmount - benefitAmount;
+    OutputView.printFinalOrderAmount(finalOrderAmount);
   }
 }
 

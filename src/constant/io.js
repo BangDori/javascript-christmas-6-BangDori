@@ -15,4 +15,5 @@ export const OUTPUT = Object.freeze({
   gift: '\n<증정 메뉴>',
   benefitDetails: '\n<혜택 내역>',
   benefitAmount: '\n<총혜택 금액>',
+  finalOrderAmount: '\n<할인 후 예상 결제 금액>',
 });

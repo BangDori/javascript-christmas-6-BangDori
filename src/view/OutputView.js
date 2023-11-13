@@ -56,6 +56,11 @@ const OutputView = {
     }
     Console.print(`-${benefitAmount.toLocaleString()}원`);
   },
+
+  printFinalOrderAmount(finalOrderAmount) {
+    Console.print(OUTPUT.finalOrderAmount);
+    Console.print(`${finalOrderAmount.toLocaleString()}원`);
+  },
 };
 
 export default OutputView;
