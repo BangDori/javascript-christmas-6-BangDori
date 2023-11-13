@@ -16,6 +16,26 @@ class EventManager {
     const benefits = [christmas, week, special, gift].filter(Boolean);
     return benefits;
   }
+
+  static getBenefitDetails(orderInfo) {
+    const benefitDetails = this.getBenefits(orderInfo);
+
+    if (benefitDetails.length === 0) {
+      return null;
+    }
+
+    return benefitDetails;
+  }
+
+  static getBenefitAmount(orderInfo) {
+    const benefitDetails = this.getBenefits(orderInfo);
+    const benefitAmount = benefitDetails.reduce(
+      (acc, { discount }) => acc + discount,
+      0,
+    );
+
+    return benefitAmount;
+  }
 }
 
 export default EventManager;
