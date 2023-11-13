@@ -29,7 +29,7 @@ function getReservationDay(date) {
  * @param {number} date 예상 방문일
  * @returns {string} 평일 | 주말
  */
-function getReservationDayType(date) {
+function getReservationWeek(date) {
   const day = getReservationDayNumber(date);
 
   if (day >= WEEKDAY.start && day <= WEEKDAY.end) {
@@ -39,4 +39,4 @@ function getReservationDayType(date) {
   return WEEKEND.name;
 }
 
-export { getReservationDay, getReservationDayType };
+export { getReservationDay, getReservationWeek };
