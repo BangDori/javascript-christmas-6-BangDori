@@ -22,12 +22,20 @@ class WeekEvent {
     const dessertCount = orderInfo.getCountByType(DESSERT);
     const discount = dessertCount * WEEK_EVENT.weekday.perDessert;
 
+    if (discount === 0) {
+      return null;
+    }
+
     return { event: WEEK_EVENT.weekday.name, discount };
   }
 
   static getWeekendDiscount(orderInfo) {
     const mainCount = orderInfo.getCountByType(MAIN);
     const discount = mainCount * WEEK_EVENT.weekend.perMain;
+
+    if (discount === 0) {
+      return null;
+    }
 
     return { event: WEEK_EVENT.weekend.name, discount };
   }
