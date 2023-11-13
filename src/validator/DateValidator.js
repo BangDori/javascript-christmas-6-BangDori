@@ -5,7 +5,7 @@ import DateError from '../error/DateError.js';
 class DateValidator {
   static validateRange(date) {
     if (date < EVENT_DATE.start || date > EVENT_DATE.end) {
-      throw new DateError(DATE_ERROR.range);
+      throw new DateError(DATE_ERROR);
     }
   }
 }

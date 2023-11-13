@@ -18,7 +18,7 @@ class MenuValidator {
   static validateMenuExistence(nameList) {
     nameList.forEach(name => {
       if (!MENU_BOARD[name]) {
-        throw new MenuError(MENU_ERROR.existence);
+        throw new MenuError(MENU_ERROR);
       }
     });
   }
@@ -27,7 +27,7 @@ class MenuValidator {
     const uniqueNameList = new Set(nameList);
 
     if (uniqueNameList.size !== nameList.length) {
-      throw new MenuError(MENU_ERROR.duplication);
+      throw new MenuError(MENU_ERROR);
     }
   }
 
@@ -40,7 +40,7 @@ class MenuValidator {
     }, 0);
 
     if (count === nameList.length) {
-      throw new MenuError(MENU_ERROR.onlyBeverage);
+      throw new MenuError(MENU_ERROR);
     }
   }
 
@@ -48,7 +48,7 @@ class MenuValidator {
     const totalCount = countList.reduce((acc, count) => acc + count, 0);
 
     if (totalCount < MENU_COUNT.min || totalCount > MENU_COUNT.max) {
-      throw new MenuError(MENU_ERROR.count);
+      throw new MenuError(MENU_ERROR);
     }
   }
 }
