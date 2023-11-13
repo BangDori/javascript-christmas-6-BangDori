@@ -8,7 +8,7 @@ class GiftEvent {
 
     return {
       event: GIFT_EVENT.name,
-      gift: GIFT_EVENT.goods.name,
+      name: GIFT_EVENT.goods.name,
       price: GIFT_EVENT.goods.price,
     };
   }
