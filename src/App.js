@@ -33,9 +33,7 @@ class App {
 
   checkEvents() {
     const eventController = new EventController();
-    const orderAmount = this.#orderInfo.getOrderAmount();
-
-    eventController.checkGiftEvent(orderAmount);
+    eventController.checkGiftEvent(this.#orderInfo);
   }
 }
 
