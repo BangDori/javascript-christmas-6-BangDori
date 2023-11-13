@@ -1,4 +1,0 @@
-const INPUT_DELIMITER = ',';
-const MENU_DELIMITER = '-';
-
-export { INPUT_DELIMITER, MENU_DELIMITER };
