@@ -1,10 +1,15 @@
 import SpecialEvent from '../../src/domain/event/SpecialEvent';
 
 describe('특별 할인 이벤트 테스트', () => {
-  test('일요일 특별 할인 적용', () => {
-    const date = 3; // 12.03 일요일
+  test.each([
+    { date: 3 },
+    { date: 10 },
+    { date: 17 },
+    { date: 24 },
+    { date: 25 }, // 크리스마스
+    { date: 31 },
+  ])('12월 $date 일 특별 할인 적용', ({ date }) => {
     const { discount } = SpecialEvent.getBenefitInfo(date);
-
     expect(discount).toBe(1000);
   });
 
@@ -14,7 +19,6 @@ describe('특별 할인 이벤트 테스트', () => {
 
     dates.forEach(date => {
       const event = SpecialEvent.getBenefitInfo(date);
-
       expect(event).toBe(null);
     });
   });
