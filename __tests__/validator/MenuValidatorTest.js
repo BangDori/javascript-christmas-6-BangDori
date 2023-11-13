@@ -26,4 +26,28 @@ describe('메뉴 검증 클래스 테스트', () => {
       MENU_ERROR,
     );
   });
+
+  test('음료만 주문한 경우에 대한 테스트', () => {
+    const menuList = ['샴페인', '제로콜라', '레드와인'];
+
+    expect(() => MenuValidator.validateBeverageOnlyOrder(menuList)).toThrow(
+      MENU_ERROR,
+    );
+  });
+
+  test('메뉴 개수가 1개 보다 작은 경우에 대한 테스트', () => {
+    const countList = [0];
+
+    expect(() => MenuValidator.validateMenuCount(countList)).toThrow(
+      MENU_ERROR,
+    );
+  });
+
+  test('메뉴 개수가 20개 보다 많은 경우에 대한 테스트', () => {
+    const countList = [21];
+
+    expect(() => MenuValidator.validateMenuCount(countList)).toThrow(
+      MENU_ERROR,
+    );
+  });
 });
