@@ -9,6 +9,10 @@ class OrderInfo {
     this.#menuList = menuList;
   }
 
+  presentGift(gift) {
+    this.#menuList.push(gift);
+  }
+
   getOrderAmount() {
     return this.#menuList.reduce((acc, [name, count]) => {
       return acc + MENU_BOARD[name].price * count;
