@@ -5,17 +5,16 @@ import OrderInfo from './domain/OrderInfo.js';
 import EventController from './controller/eventController.js';
 
 class App {
-  #orderInfo;
-
   async run() {
-    await this.inputOrderInfo();
-    this.showOrderDetails();
+    const orderInfo = await this.inputOrderInfo();
+
+    this.showOrderDetails(orderInfo);
 
     const eventController = new EventController();
-    eventController.checkGiftEvent(this.#orderInfo);
-    eventController.checkBenefitDetails(this.#orderInfo);
-    eventController.checkAmounts(this.#orderInfo);
-    eventController.checkBadge(this.#orderInfo);
+    eventController.checkGiftEvent(orderInfo);
+    eventController.checkBenefitDetails(orderInfo);
+    eventController.checkAmounts(orderInfo);
+    eventController.checkBadge(orderInfo);
   }
 
   async inputOrderInfo() {
@@ -26,12 +25,12 @@ class App {
 
     OutputView.printPreviewEvent(reservationDate);
 
-    this.#orderInfo = new OrderInfo(reservationDate, menuList);
+    return new OrderInfo(reservationDate, menuList);
   }
 
-  showOrderDetails() {
-    const recepitDetails = this.#orderInfo.getReceiptDetails();
-    const orderAmount = this.#orderInfo.getOrderAmount();
+  showOrderDetails(orderInfo) {
+    const recepitDetails = orderInfo.getReceiptDetails();
+    const orderAmount = orderInfo.getOrderAmount();
 
     OutputView.printOrderInfo(recepitDetails, orderAmount);
   }
