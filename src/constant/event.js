@@ -22,14 +22,15 @@ export const CHRISTMAS_EVENT = Object.freeze({
   base: 900,
 });
 
-export const WEEKDAY_EVENT = Object.freeze({
-  name: '평일 할인',
-  perDessert: EVENT_DATE.year,
-});
-
-export const WEEKEND_EVENT = Object.freeze({
-  name: '주말 할인',
-  perMain: EVENT_DATE.year,
+export const WEEK_EVENT = Object.freeze({
+  weekday: {
+    name: '평일 할인',
+    perDessert: EVENT_DATE.year,
+  },
+  weekend: {
+    name: '주말 할인',
+    perMain: EVENT_DATE.year,
+  },
 });
 
 export const SPECIAL_EVENT = Object.freeze({
