@@ -1,10 +1,10 @@
-import BadgeEvent from '../../src/domain/event/BadgeEvent';
+import BadgeEvent from '../../src/domain/event/BadgeEvent.js';
 
 describe('배지 이벤트 클래스 테스트', () => {
   test.each([
-    { price: 20_000, expectedBadge: '산타' },
-    { price: 10_000, expectedBadge: '트리' },
-    { price: 5_000, expectedBadge: '별' },
+    { price: 20000, expectedBadge: '산타' },
+    { price: 10000, expectedBadge: '트리' },
+    { price: 5000, expectedBadge: '별' },
   ])('$expectedBadge 배지 테스트', ({ price, expectedBadge }) => {
     const badge = BadgeEvent.getBadge(price);
 

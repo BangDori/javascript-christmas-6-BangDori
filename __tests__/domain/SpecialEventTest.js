@@ -1,4 +1,4 @@
-import SpecialEvent from '../../src/domain/event/SpecialEvent';
+import SpecialEvent from '../../src/domain/event/SpecialEvent.js';
 
 describe('특별 할인 이벤트 테스트', () => {
   test.each([3, 10, 17, 24, 25, 31])('12월 %i일 특별 할인 적용', date => {

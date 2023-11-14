@@ -1,5 +1,5 @@
-import { MENU_ERROR } from '../../src/constant/message/error';
-import MenuValidator from '../../src/validator/MenuValidator';
+import { MENU_ERROR } from '../../src/constant/message/error.js';
+import MenuValidator from '../../src/validator/MenuValidator.js';
 
 describe('메뉴 검증 클래스 테스트', () => {
   test('정상 검증 테스트', () => {

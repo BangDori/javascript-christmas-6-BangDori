@@ -1,7 +1,7 @@
-import { BEVERAGE_MENU } from '../../src/constant/menu/beverage';
-import { DESSERT } from '../../src/constant/menu/dessert';
-import { MAIN } from '../../src/constant/menu/main';
-import OrderInfo from '../../src/domain/OrderInfo';
+import { BEVERAGE_MENU } from '../../src/constant/menu/beverage.js';
+import { DESSERT } from '../../src/constant/menu/dessert.js';
+import { MAIN } from '../../src/constant/menu/main.js';
+import OrderInfo from '../../src/domain/OrderInfo.js';
 
 describe('주문 정보 클래스 테스트', () => {
   const date = 1;

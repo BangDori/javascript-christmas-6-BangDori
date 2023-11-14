@@ -1,5 +1,5 @@
-import { CHRISTMAS_EVENT } from '../../src/constant/event';
-import ChristmasEvent from '../../src/domain/event/ChristmasEvent';
+import { CHRISTMAS_EVENT } from '../../src/constant/event.js';
+import ChristmasEvent from '../../src/domain/event/ChristmasEvent.js';
 
 describe('크리스마스 이벤트 클래스 테스트', () => {
   test('1일, 1000원 할인', () => {

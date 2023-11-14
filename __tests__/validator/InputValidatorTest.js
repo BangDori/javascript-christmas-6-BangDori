@@ -1,5 +1,5 @@
-import { DATE_ERROR, MENU_ERROR } from '../../src/constant/message/error';
-import InputValidator from '../../src/validator/InputValidator';
+import { DATE_ERROR, MENU_ERROR } from '../../src/constant/message/error.js';
+import InputValidator from '../../src/validator/InputValidator.js';
 
 describe('입력 검증 클래스 테스트', () => {
   describe('날짜 검증 테스트', () => {

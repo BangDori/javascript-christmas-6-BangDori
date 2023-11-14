@@ -1,6 +1,6 @@
-import { WEEK_EVENT } from '../../src/constant/event';
-import WeekEvent from '../../src/domain/event/WeekEvent';
-import OrderInfo from '../../src/domain/OrderInfo';
+import { WEEK_EVENT } from '../../src/constant/event.js';
+import WeekEvent from '../../src/domain/event/WeekEvent.js';
+import OrderInfo from '../../src/domain/OrderInfo.js';
 
 describe('주중 이벤트 클래스 테스트', () => {
   let orderInfo;
