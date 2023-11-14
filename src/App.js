@@ -2,7 +2,7 @@ import retryOnError from './util/retry.js';
 import InputView from './view/InputView.js';
 import OutputView from './view/OutputView.js';
 import OrderInfo from './domain/OrderInfo.js';
-import EventController from './controller/eventController.js';
+import EventController from './controller/EventController.js';
 
 class App {
   async run() {
