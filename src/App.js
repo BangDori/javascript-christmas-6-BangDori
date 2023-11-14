@@ -7,14 +7,8 @@ import EventController from './controller/EventController.js';
 class App {
   async run() {
     const orderInfo = await this.inputOrderInfo();
-
     this.showOrderInfo(orderInfo);
-
-    const eventController = new EventController(orderInfo);
-    eventController.checkGiftEvent();
-    eventController.checkBenefitDetails();
-    eventController.checkAmounts();
-    eventController.checkBadge();
+    this.processEvents(orderInfo);
   }
 
   async inputOrderInfo() {
@@ -33,6 +27,14 @@ class App {
     const orderAmount = orderInfo.getOrderAmount();
 
     OutputView.printOrderInfo(menuList, orderAmount);
+  }
+
+  processEvents(orderInfo) {
+    const eventController = new EventController(orderInfo);
+    eventController.checkGiftEvent();
+    eventController.checkBenefitDetails();
+    eventController.checkAmounts();
+    eventController.checkBadge();
   }
 }
 
