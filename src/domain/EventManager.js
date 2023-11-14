@@ -6,7 +6,7 @@ import BadgeEvent from './event/BadgeEvent.js';
 import { EVENT_PARTICIPATION_PRICE } from '../constant/event.js';
 
 class EventManager {
-  static getBenefits(orderInfo) {
+  static calculateEventBenefits(orderInfo) {
     const orderAmount = orderInfo.getOrderAmount();
     if (orderAmount < EVENT_PARTICIPATION_PRICE) {
       return [];
@@ -22,7 +22,7 @@ class EventManager {
   }
 
   static getBenefitDetails(orderInfo) {
-    const benefitDetails = this.getBenefits(orderInfo);
+    const benefitDetails = this.calculateEventBenefits(orderInfo);
 
     if (benefitDetails.length === 0) {
       return null;
@@ -32,7 +32,7 @@ class EventManager {
   }
 
   static getBenefitAmount(orderInfo) {
-    const benefitDetails = this.getBenefits(orderInfo);
+    const benefitDetails = this.calculateEventBenefits(orderInfo);
     const benefitAmount = benefitDetails.reduce(
       (acc, { discount }) => acc + discount,
       0,
