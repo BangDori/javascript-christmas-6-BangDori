@@ -1,5 +1,4 @@
-import { EVENT_BADGE } from '../../constant/event.js';
-import { NO_BENEFIT } from '../../constant/event.js';
+import { EVENT_BADGE, NO_BENEFIT } from '../../constant/event.js';
 
 class BadgeEvent {
   static getBadge(totalEventPrice) {
