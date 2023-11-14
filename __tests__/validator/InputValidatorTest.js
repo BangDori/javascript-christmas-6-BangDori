@@ -9,15 +9,10 @@ describe('입력 검증 클래스 테스트', () => {
       expect(() => InputValidator.validateDate(validDate)).not.toThrow();
     });
 
-    test('유효하지 않는 날짜에 대한 테스트', () => {
-      const invalidDates = ['abc', ''];
-
-      invalidDates.forEach(invalidDate => {
-        console.log(invalidDate);
-        expect(() => InputValidator.validateDate(invalidDate)).toThrow(
-          DATE_ERROR,
-        );
-      });
+    test.each(['abc', ''])('유효하지 않는 날짜에 대한 테스트', invalidDate => {
+      expect(() => InputValidator.validateDate(invalidDate)).toThrow(
+        DATE_ERROR,
+      );
     });
   });
 
@@ -28,14 +23,13 @@ describe('입력 검증 클래스 테스트', () => {
       expect(() => InputValidator.validateMenu(validMenuList)).not.toThrow();
     });
 
-    test('유효하지 않는 주문에 대한 테스트', () => {
-      const invalidMenuList = ['음료-1, 메뉴', '음료', 'abc-1'];
-
-      invalidMenuList.forEach(invalidMenu => {
-        expect(() => InputValidator.validateMenu(invalidMenu)).toThrow(
+    test.each(['음료-1,메인', '음료', 'abc-1'])(
+      '유효하지 않는 주문에 대한 테스트',
+      invalidMenuList => {
+        expect(() => InputValidator.validateMenu(invalidMenuList)).toThrow(
           MENU_ERROR,
         );
-      });
-    });
+      },
+    );
   });
 });
