@@ -2,7 +2,7 @@ import { DATE_ERROR, MENU_ERROR } from '../constant/message/error.js';
 import InputError from '../error/InputError.js';
 
 const datePattern = /^\d+$/;
-const menuPattern = /^(?:[가-힣]+-\d+(?:,\s*[가-힣]+-\d+)*)$/;
+const menuPattern = /^[가-힣]+-\d+(,\s*[가-힣]+-\d+)*$/;
 
 class InputValidator {
   static validateDate(date) {
